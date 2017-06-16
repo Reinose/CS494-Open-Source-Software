@@ -1,4 +1,6 @@
 Flask==0.12.1
 Jinja2==2.9.6
-PyMySQL>=0.7.6
-arcus>=0.2.8
+MySQL-python==1.2.5
+python-memcached==1.58
+redis==2.10.5
+
