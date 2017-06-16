@@ -35,14 +35,14 @@ def mysql():
 @app.route('/arcus')
 def arcus_():
     i = random.randint(1,10000)
-    res = arcus.get(i)
+    res = arcus.get(str(i))
     if res:
         return 'Cache Hit: '+str(res)
     else:
         query = 'select * from testset where id=%s'%i
         cursor.execute(query)
         res = cursor.fetchone()
-        arcus.set(i,res[1])
+        arcus.set(str(i),res[1])
         return 'Cache Miss: '+str(res)
 
 @app.route('/nbase')
